@@ -50,8 +50,8 @@
     h1 {
       margin: 0 0 2rem 0;
       font-size: 0.95rem;
-      text-transform: uppercase;
       font-weight: 500;
+      text-transform: uppercase;
     }
 
     .separator {
@@ -62,7 +62,6 @@
     .accordion {
       width: 100%;
       max-width: 700px;
-      margin: 0 auto;
     }
 
     .accordion-header {
@@ -102,3 +101,54 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="archive-label">[ARCHIVE MODE ENABLED]</div>
+
+  <h1>MISSION LINKS</h1>
+
+  <div class="accordion">
+
+    <div class="accordion-header">[001] MUSIC VIDEO: ORIGINS</div>
+    <div class="accordion-content">
+      <p>A short film about transcendence. Visual excerpt below.</p>
+      <video src="yourvideo.mp4" controls></video>
+    </div>
+
+    <div class="separator">────────────────────────────</div>
+
+    <div class="accordion-header">[002] DESIGN EXCERPT</div>
+    <div class="accordion-content">
+      <p>Preview of visual direction for the upcoming launch.</p>
+      <img src="design.jpg" alt="Design Preview" />
+    </div>
+
+    <div class="separator">────────────────────────────</div>
+
+    <div class="accordion-header">[003] DOWNLOAD PRESS KIT</div>
+    <div class="accordion-content">
+      <p><a href="https://example.com/presskit.pdf" target="_blank">Click here to download PDF</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isOpen = content.style.display === 'block';
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+        if (!isOpen) content.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
