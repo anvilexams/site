@@ -38,6 +38,26 @@
       padding: 0rem 1rem;
     }
 
+    /* Styling for Footer */
+.footer {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.footer img {
+  display: block; /* Makes the image appear on a new line */
+  margin: 0 auto; /* Centers the image */
+}
+
+.footer span {
+  display: block; /* Forces the span text to appear on a new line */
+  margin-top: 0.5rem; /* Adds space between the image and text */
+}
+
     .archive-label, p {
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -241,14 +261,13 @@
     </div>
     <div class="separator">───</div>
 
-  </div>
-
-  <p class="spaced">
-    <a href="http://leopold.fm">
-      <img src="hblogo.png" width="70" alt="Leopold.fm logo">
-    </a>
-    <span>LEOPOLD.FM</span>
-  </p>
+<!-- Updated Footer Section -->
+<footer class="footer">
+  <a href="http://leopold.fm">
+    <img src="hblogo.png" width="70" alt="Leopold.fm logo">
+  </a>
+  <span>LEOPOLD.FM</span>
+</footer>
 
   <script>
     const headers = document.querySelectorAll('.accordion-header');
