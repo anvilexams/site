@@ -71,10 +71,11 @@
       transition: background 0.1s ease-in-out;
     }
 
-    /* On hover, show content */
+    /* On hover, show content and keep interactive */
     .accordion-header:hover + .accordion-content {
       display: block;
       visibility: visible;
+      pointer-events: auto; /* Ensures links and content are clickable */
     }
 
     .accordion-content {
@@ -83,6 +84,7 @@
       border-top: 1px dashed var(--border);
       animation: fadeIn 0.2s ease-in-out;
       visibility: hidden;
+      pointer-events: none; /* Prevent interaction when hidden */
     }
 
     .accordion-content img,
