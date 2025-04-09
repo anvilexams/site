@@ -68,24 +68,19 @@
       font-weight: 500;
       border-top: 1px solid var(--border);
       cursor: pointer;
-      transition: background 0.1s ease-in-out;
+      transition: background 0.3s ease-in-out;
     }
 
-    /* Hover effect to open accordion content */
-    .accordion-header:hover + .accordion-content {
-      max-height: 500px;  /* Arbitrary large value */
-      padding: 1rem;
-      visibility: visible;
-      overflow: visible;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+    /* Hover background color change */
+    .accordion-header:hover {
+      background-color: #eaeaea; /* Light gray background on hover */
     }
 
-    /* Hidden state (initially closed) */
     .accordion-content {
-      max-height: 0; /* Initially collapsed */
-      overflow: hidden;
-      visibility: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
+      display: none;
+      padding: 1rem 0;
+      border-top: 1px dashed var(--border);
+      animation: fadeIn 0.2s ease-in-out;
     }
 
     .accordion-content img,
@@ -105,6 +100,11 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
   </style>
@@ -142,5 +142,14 @@
 
   </div>
 
+  <script>
+    const headers = document.querySelectorAll('.accordion-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
 </body>
 </html>
