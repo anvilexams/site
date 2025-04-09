@@ -17,7 +17,12 @@
       --accent: #5f9ea0;
     }
 
-    /* Center everything horizontally and add proper space */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -27,11 +32,10 @@
       letter-spacing: 0.4px;
       line-height: 1.6;
       text-align: center;
-      padding: 2rem 1rem; /* Add top/bottom padding */
-      margin: 0; /* Remove default margin */
+      padding: 2rem 1rem;
+      margin: 0;
     }
 
-    /* Archive label above header */
     .archive-label {
       text-transform: uppercase;
       font-size: 0.75rem;
@@ -40,48 +44,45 @@
       letter-spacing: 0.5px;
     }
 
-    /* Header (MISSION LINKS) */
     h1 {
-      margin-top: 3rem; /* Adds spacing before header */
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
+      margin: 3rem 0 2rem 0;
+      font-size: 1rem;
       font-weight: 500;
       text-transform: uppercase;
     }
 
-    /* Separator (ASCII line) */
     .separator {
       margin: 2rem 0 1rem;
       color: #aaa;
     }
 
-    /* Accordion styles */
     .accordion {
       width: 100%;
       max-width: 700px;
-      margin: 0 auto; /* Centers the accordion content */
+      margin: 0 auto;
     }
 
-        .accordion-header {
-  padding: 1rem 0;
-  font-size: 1rem;
-  font-weight: 500;
-  border-top: 0px solid var(--border);
-  cursor: pointer;
-  transition: text-decoration 0.3s ease-in-out;
-}
+    .accordion-header {
+      padding: 1rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border-top: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.1s ease-in-out;
+    }
 
-.accordion-header:hover {
-  text-decoration: underline; /* Underlines text when hovered */
-  text-decoration-color: var(--accent); /* Optional: gives the underline a color */
-}
-    
+    /* On hover, show content */
+    .accordion-header:hover + .accordion-content {
+      display: block;
+      visibility: visible;
+    }
 
     .accordion-content {
       display: none;
       padding: 1rem 0;
-      border-top: 0px dashed var(--border);
+      border-top: 1px dashed var(--border);
       animation: fadeIn 0.2s ease-in-out;
+      visibility: hidden;
     }
 
     .accordion-content img,
@@ -110,16 +111,12 @@
   </style>
 </head>
 <body>
-  <!-- Archive Mode label -->
   <div class="archive-label">[ARCHIVE MODE ENABLED]</div>
 
-  <!-- Header -->
   <h1>MISSION LINKS</h1>
 
-  <!-- Accordion content starts -->
   <div class="accordion">
 
-    <!-- First accordion item -->
     <div class="accordion-header">[001] MUSIC VIDEO: ORIGINS</div>
     <div class="accordion-content">
       <p>A short film about transcendence. Visual excerpt below.</p>
@@ -128,7 +125,6 @@
 
     <div class="separator">────────────────────────────</div>
 
-    <!-- Second accordion item -->
     <div class="accordion-header">[002] DESIGN EXCERPT</div>
     <div class="accordion-content">
       <p>Preview of visual direction for the upcoming launch.</p>
@@ -137,7 +133,6 @@
 
     <div class="separator">────────────────────────────</div>
 
-    <!-- Third accordion item -->
     <div class="accordion-header">[003] DOWNLOAD PRESS KIT</div>
     <div class="accordion-content">
       <p><a href="https://example.com/presskit.pdf" target="_blank">Click here to download PDF</a></p>
@@ -145,15 +140,12 @@
 
   </div>
 
-  <!-- Script for accordion toggling -->
   <script>
     const headers = document.querySelectorAll('.accordion-header');
     headers.forEach(header => {
       header.addEventListener('click', () => {
         const content = header.nextElementSibling;
-        const isOpen = content.style.display === 'block';
-        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
-        if (!isOpen) content.style.display = 'block';
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
       });
     });
   </script>
