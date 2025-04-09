@@ -71,20 +71,21 @@
       transition: background 0.1s ease-in-out;
     }
 
-    /* On hover, show content and keep interactive */
+    /* Hover effect to open accordion content */
     .accordion-header:hover + .accordion-content {
-      display: block;
+      max-height: 500px;  /* Arbitrary large value */
+      padding: 1rem;
       visibility: visible;
-      pointer-events: auto; /* Ensures links and content are clickable */
+      overflow: visible;
+      transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
+    /* Hidden state (initially closed) */
     .accordion-content {
-      display: none;
-      padding: 1rem 0;
-      border-top: 1px dashed var(--border);
-      animation: fadeIn 0.2s ease-in-out;
+      max-height: 0; /* Initially collapsed */
+      overflow: hidden;
       visibility: hidden;
-      pointer-events: none; /* Prevent interaction when hidden */
+      transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
     .accordion-content img,
@@ -106,10 +107,6 @@
       text-decoration: underline;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -119,6 +116,7 @@
 
   <div class="accordion">
 
+    <!-- First accordion item -->
     <div class="accordion-header">[001] MUSIC VIDEO: ORIGINS</div>
     <div class="accordion-content">
       <p>A short film about transcendence. Visual excerpt below.</p>
@@ -127,6 +125,7 @@
 
     <div class="separator">────────────────────────────</div>
 
+    <!-- Second accordion item -->
     <div class="accordion-header">[002] DESIGN EXCERPT</div>
     <div class="accordion-content">
       <p>Preview of visual direction for the upcoming launch.</p>
@@ -135,6 +134,7 @@
 
     <div class="separator">────────────────────────────</div>
 
+    <!-- Third accordion item -->
     <div class="accordion-header">[003] DOWNLOAD PRESS KIT</div>
     <div class="accordion-content">
       <p><a href="https://example.com/presskit.pdf" target="_blank">Click here to download PDF</a></p>
@@ -142,14 +142,5 @@
 
   </div>
 
-  <script>
-    const headers = document.querySelectorAll('.accordion-header');
-    headers.forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-  </script>
 </body>
 </html>
