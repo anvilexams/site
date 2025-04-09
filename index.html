@@ -116,6 +116,13 @@
     }
 
   </style>
+  <script>
+  // Select all anchor tags and add target="_blank" to them
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    link.setAttribute('target', '_blank');
+  });
+</script>
 </head>
 <body>
   <div class="archive-label">[ ARCHIVE MODE ENABLED ]</div>
