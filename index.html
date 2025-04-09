@@ -110,6 +110,19 @@ text-decoration: underline;
       margin-bottom: 1rem;
     }
 
+
+    /* Apply grayscale to all images */
+img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* On hover, remove grayscale to show full color */
+img:hover {
+  filter: grayscale(0%);
+}
+
+    
     a {
       color: black;
       text-decoration: none;
