@@ -3,54 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Links Hub</title>
+  <title>Mission Links</title>
+
+  <!-- VT323 DOS-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <!-- Canonical SEO domain -->
+  <link rel="canonical" href="https://links.yourdomain.com/" />
+
   <style>
+    :root {
+      --bg: #f7f7f7;
+      --text: #111111;
+      --border: #ccc;
+      --accent: #5f9ea0;
+    }
+
     body {
-      font-family: sans-serif;
-      background: #0d0d0d;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       margin: 2rem auto;
       max-width: 700px;
       padding: 0 1rem;
+      font-family: 'VT323', monospace;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 2rem;
-      font-weight: 400;
+      font-size: 2.4rem;
+      font-weight: normal;
+      text-transform: uppercase;
     }
+
     .accordion {
       margin-bottom: 1rem;
-      border-bottom: 1px solid #444;
+      border-bottom: 1px solid var(--border);
     }
+
     .accordion-header {
       cursor: pointer;
       padding: 1rem 0;
-      font-size: 1.2rem;
-      border-top: 1px solid #444;
-      transition: color 0.2s;
+      font-size: 1.5rem;
+      border-top: 1px solid var(--border);
+      transition: background 0.1s ease-in-out;
     }
+
     .accordion-header:hover {
-      color: #ccc;
+      background: #eaeaea;
     }
+
     .accordion-content {
       display: none;
       padding: 1rem 0;
-      animation: fadeIn 0.3s ease-in-out;
+      border-top: 1px dashed var(--border);
+      animation: fadeIn 0.2s ease-in-out;
     }
+
     .accordion-content img, 
-    .accordion-content video {
+    .accordion-content video, 
+    .accordion-content iframe {
       max-width: 100%;
       height: auto;
       margin-top: 0.5rem;
-      border-radius: 6px;
     }
+
     a {
-      color: #89c9ff;
+      color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -58,28 +87,28 @@
   </style>
 </head>
 <body>
-  <h1>Mission Links</h1>
+  <h1>MISSION LINKS</h1>
 
   <div class="accordion">
-    <div class="accordion-header">🎬 Music Videos</div>
+    <div class="accordion-header">[001]</div>
     <div class="accordion-content">
-      <p> cccc<em>ee</em>.</p>
+      <p>excerpt below.</p>
       <video src="yourvideo.mp4" controls></video>
     </div>
   </div>
 
   <div class="accordion">
-    <div class="accordion-header">📸 Design Excerpt</div>
+    <div class="accordion-header">[002] DESIGN EXCERPT</div>
     <div class="accordion-content">
-      <p>Visual direction for the upcoming launch.</p>
+      <p>d.</p>
       <img src="design.jpg" alt="Design Preview" />
     </div>
   </div>
 
   <div class="accordion">
-    <div class="accordion-header">📁 Press Kit</div>
+    <div class="accordion-header">[003] DOWNLOAD PRESS KIT</div>
     <div class="accordion-content">
-      <p><a href="https://example.com/presskit.pdf" target="_blank">Download PDF</a></p>
+      <p><a href="https://example.com/presskit.pdf" target="_blank">Click here to download PDF</a></p>
     </div>
   </div>
 
