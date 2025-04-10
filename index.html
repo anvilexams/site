@@ -86,6 +86,10 @@
     cursor: pointer;
   }
 
+  .accordion-header.active {
+  font-weight: bold;
+}
+
   .accordion-header:hover {
     background-color: white;
     text-decoration: underline;
@@ -569,9 +573,13 @@ with Lou Reed and Laurie Anderson</p>
         });
       });
 
+      // Remove 'active' from all headers
+      headers.forEach(h => h.classList.remove('active'));
+
       // Reopen selected section if it wasn't open
       if (!isOpen) {
         content.style.display = 'block';
+        header.classList.add('active'); // ✅ ADD THIS LINE
       }
     });
   });
@@ -583,6 +591,5 @@ with Lou Reed and Laurie Anderson</p>
   });
 </script>
     
-  
 </body>
 </html>
