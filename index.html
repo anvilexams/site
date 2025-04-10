@@ -17,187 +17,212 @@
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://hb.leopold.fm/" />
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --border: #ccc;
-      --accent: #5f9ea0;
-    }
+ <style>
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+    --border: #ccc;
+    --accent: #5f9ea0;
+  }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 1rem;
-    }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Courier Prime', Courier, monospace;
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0px;
-      line-height: 1;
-      text-align: center;
-      padding: 0rem 1rem;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier Prime', Courier, monospace;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 1;
+    text-align: center;
+    padding: 0rem 1rem;
+  }
 
-    .archive-label, p {
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-      opacity: 0.8;
-      letter-spacing: 0.5px;
-    }
+  .archive-label, p {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+  }
 
-    h1 {
-      margin: 6rem 0 3rem 0;
-      font-size: 1rem;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
+  h1 {
+    margin: 6rem 0 3rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 
-    h2 {
-      margin: 1rem 0;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
+  h2 {
+    margin: 1rem 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 
-    .separator {
-      margin: 0.2rem 0;
-      color: #aaa;
-    }
+  .separator {
+    margin: 0.2rem 0;
+    color: #aaa;
+  }
 
-.accordion {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
+  .accordion {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 
-    .accordion-header {
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-    }
+  .accordion-header {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
 
-    .accordion-header:hover {
-      background-color: white;
-      text-decoration: underline;
-    }
+  .accordion-header:hover {
+    background-color: white;
+    text-decoration: underline;
+  }
 
-    .accordion-content {
-      background-color: #eaeaea;
-      animation: fadeIn 0.5s ease-in-out;
-      display: none;
-      padding: 1rem 0;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-.accordion-content p {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.accordion-content img,
-.accordion-content video {
-  display: block;
-  margin: 0 auto;
-  max-width: 400px;
-  height: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+  .accordion-content {
+    background-color: #eaeaea;
+    animation: fadeIn 0.5s ease-in-out;
+    display: none;
+    padding: 1rem 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
 
-.accordion-content iframe {
-  display: block;
-  margin: 0 auto;
-  width: 400px;
-  height: 300px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-    
+  .accordion-content p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    img {
-      filter: grayscale(100%);
-      transition: filter 1.0s ease-in-out;
-    }
+  .accordion-content img,
+  .accordion-content video {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 
-    img:hover {
-      filter: grayscale(0%);
-    }
+  .accordion-content iframe {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 
-    .spaced {
-      margin-bottom: 2em;
-    }
+  img {
+    filter: grayscale(100%);
+    transition: filter 1.0s ease-in-out;
+  }
 
-    a {
-      color: black;
-      text-decoration: none;
-    }
+  img:hover {
+    filter: grayscale(0%);
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  .spaced {
+    margin-bottom: 2em;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  a {
+    color: black;
+    text-decoration: none;
+  }
 
-    .footer {
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      margin-top: 2rem;
-      opacity: 0.8;
-      letter-spacing: 0.5px;
-      text-align: center;
-      margin-bottom: 50px;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    .footer img {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 1rem;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
-    .footer span {
-      display: block;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
+  .footer {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
-    iframe {
-  display: block;
-  margin: 1rem auto;
-  max-width: 100%;
+  .footer img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
 
-      .video-block {
-  margin: 2rem auto;
-  max-width: 400px;
-  text-align: center;
-}
+  .footer span {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 
-.video-block iframe {
-  display: block;
-  margin: 0 auto;
-}
+  iframe {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
 
-.video-block p {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  opacity: 0.8;
-  letter-spacing: 0.5px;
-}
-}
-    
-  </style>
+  .video-block {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .video-thumbnail {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .video-thumbnail::after {
+    content: '▶';
+    font-size: 3rem;
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .video-block iframe {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .video-block p {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+  }
+</style>
 </head>
 <body>
   <div class="archive-label">// #F-002 //</div>
@@ -220,9 +245,11 @@
         The New York Times
       </a>
       <img src="lincoln2.jpg" />
-      <p>Hahn-Bin post-performance (Photo: Derek Blasberg)</p>
+      <p>Hahn-Bin backstage post-performance<br>
+Photo: Derek Blasberg</p>
       <img src="lincoln4.jpg" />
-      <p>Hahn-Bin with Lou Reed and Itzhak Perlman</p>
+      <p>Hahn-Bin post-performance<br>
+        with Lou Reed and Itzhak Perlman</p>
     </div>
     <div class="separator">───</div>
 
@@ -479,40 +506,63 @@ with Lou Reed and Laurie Anderson</p>
     <span>LEOPOLD.FM</a><br></span>
   </footer>
 
-<script>
-  const headers = document.querySelectorAll('.accordion-header');
+   <script>
+  // Custom YouTube thumbnail loader with autoplay
+  document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+      const container = thumbnail.parentElement;
+      const iframe = container.querySelector('iframe');
+      thumbnail.style.display = 'none';
+      iframe.style.display = 'block';
 
+      // Auto-start video playback
+      const src = iframe.getAttribute('src');
+      iframe.setAttribute('src', src + (src.includes('?') ? '&' : '?') + 'autoplay=1');
+    });
+  });
+
+  // Accordion toggle with media reset on close
+  const headers = document.querySelectorAll('.accordion-header');
   headers.forEach(header => {
     header.addEventListener('click', () => {
       const content = header.nextElementSibling;
       const isOpen = content.style.display === 'block';
 
-      // Close all accordion contents and stop media
+      // Close all accordion sections and stop media
       document.querySelectorAll('.accordion-content').forEach(section => {
         section.style.display = 'none';
 
-        // Pause <video> tags
+        // Stop HTML5 videos
         section.querySelectorAll('video').forEach(video => {
           video.pause();
           video.currentTime = 0;
         });
 
-        // Reset <iframe> src (kills YouTube embeds)
+        // Reload YouTube embeds
         section.querySelectorAll('iframe').forEach(iframe => {
           const src = iframe.src;
-          iframe.src = '';         // Unload
-          iframe.src = src;        // Reload fresh
+          iframe.src = '';
+          iframe.src = src;
+        });
+
+        // Restore thumbnails for custom video overlays
+        section.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+          thumbnail.style.display = 'block';
+        });
+
+        section.querySelectorAll('iframe').forEach(iframe => {
+          iframe.style.display = 'none';
         });
       });
 
-      // Toggle this one open if it wasn't already
+      // Reopen selected section if it wasn't open
       if (!isOpen) {
         content.style.display = 'block';
       }
     });
   });
 
-  // Open all links in new tabs
+  // Ensure all links open in new tabs securely
   document.querySelectorAll('a').forEach(link => {
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener noreferrer');
