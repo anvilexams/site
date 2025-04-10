@@ -188,14 +188,20 @@
 }
 
   .video-thumbnail {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    position: relative;
-  }
+  width: 100%;
+  height: 300px;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.video-block iframe {
+  width: 100%;
+  height: 300px;
+  display: none;
+}
 
   .video-thumbnail::after {
     content: '▶';
