@@ -478,20 +478,46 @@
     <span>LEOPOLD.FM</a><br></span>
   </footer>
 
-  <script>
-    const headers = document.querySelectorAll('.accordion-header');
-    headers.forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-      });
-    });
+<script>
+  const headers = document.querySelectorAll('.accordion-header');
 
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-      link.setAttribute('target', '_blank');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const isOpen = content.style.display === 'block';
+
+      // Close all accordion contents and stop media
+      document.querySelectorAll('.accordion-content').forEach(section => {
+        section.style.display = 'none';
+
+        // Pause <video> tags
+        section.querySelectorAll('video').forEach(video => {
+          video.pause();
+          video.currentTime = 0;
+        });
+
+        // Reset <iframe> src (kills YouTube embeds)
+        section.querySelectorAll('iframe').forEach(iframe => {
+          const src = iframe.src;
+          iframe.src = '';         // Unload
+          iframe.src = src;        // Reload fresh
+        });
+      });
+
+      // Toggle this one open if it wasn't already
+      if (!isOpen) {
+        content.style.display = 'block';
+      }
     });
-  </script>
+  });
+
+  // Open all links in new tabs
+  document.querySelectorAll('a').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+    
   
 </body>
 </html>
